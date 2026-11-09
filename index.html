@@ -1,16 +1,143 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Xerox Universitária | Gestão Financeira</title>
 <style>
-:root{--navy:#101e3c;--navy2:#192d54;--yellow:#f5c842;--bg:#f3f6fb;--ink:#18253e;--muted:#66738a;--border:#e2e8f0}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}button,input,textarea{font:inherit}button{cursor:pointer}.top{background:var(--navy);color:#fff;padding:18px max(22px,calc((100vw - 1140px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;gap:13px;align-items:center}.mark{height:43px;width:43px;background:var(--yellow);color:var(--navy);border-radius:13px;display:grid;place-items:center;font-size:24px;font-weight:900}.brand strong{display:block;font-size:18px}.brand small{color:#c8d3e7}.tag{font-size:12px;border:1px solid #5b6d90;padding:7px 10px;border-radius:99px;color:#dce5f5}.wrap{max-width:1140px;margin:0 auto;padding:32px 22px 60px}.intro{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:26px}.intro h1{font-size:clamp(24px,3vw,34px);margin:0 0 8px}.intro p{color:var(--muted);margin:0}.pill{background:#fff;border:1px solid var(--border);padding:8px 12px;border-radius:99px;color:#53627a;font-size:12px}.grid{display:grid;grid-template-columns:340px 1fr;gap:22px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 6px 24px rgba(16,30,60,.04);padding:24px}.card h2{font-size:18px;margin:0 0 9px}.card p{color:var(--muted);font-size:14px;line-height:1.6}.label{display:block;font-size:13px;font-weight:700;margin:18px 0 7px}input{width:100%;border:1px solid #cfd8e5;border-radius:10px;padding:12px 13px;background:#fff;outline-color:var(--yellow)}.btn{border:0;border-radius:10px;background:var(--yellow);color:var(--navy);font-weight:800;padding:13px 18px;width:100%;margin-top:18px}.hint{background:#fff8df;border:1px solid #f3df9a;border-radius:10px;padding:12px;margin-top:17px;font-size:12px;line-height:1.6;color:#725a1d}.preview{background:#f8faff;border:1px dashed #cad6e8;border-radius:14px;padding:18px;margin-top:18px}.preview-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.preview-head strong{font-size:15px}.preview-head span{font-size:11px;color:#6a7890}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}.stat{background:white;border:1px solid var(--border);padding:15px;border-radius:12px}.stat small{color:#728097;display:block;font-size:11px}.stat b{display:block;font-size:21px;margin-top:8px;color:var(--navy)}.rows{margin-top:15px;border:1px solid var(--border);background:#fff;border-radius:12px;overflow:hidden}.r{display:grid;grid-template-columns:1fr 1fr 90px;gap:8px;align-items:center;padding:13px;border-top:1px solid var(--border);font-size:13px}.r:first-child{border-top:0;background:#f3f6fb;color:#64738c;font-weight:700;font-size:11px}.status{display:inline-block;border-radius:99px;background:#eef2f8;padding:5px 8px;color:#52617c;font-size:11px;text-align:center}.foot{text-align:center;color:#8290a5;font-size:12px;margin-top:28px}.note{margin-top:18px;font-size:13px;color:#56657e}.toast{display:none;color:#7b3f00;background:#fff3d1;padding:12px;border-radius:9px;margin-top:14px;font-size:13px}@media(max-width:800px){.grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr}.top{padding:16px 20px}.tag{font-size:10px}.r{grid-template-columns:1fr 1fr 70px}.wrap{padding-top:24px}}
+:root{--navy:#101e3c;--navy2:#192d54;--yellow:#f5c842;--bg:#f3f6fb;--ink:#18253e;--muted:#66738a;--border:#e2e8f0;--green:#147a50;--red:#a52b2b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+button,input{font:inherit}button{cursor:pointer}.top{background:var(--navy);color:#fff;padding:18px max(22px,calc((100vw - 1140px)/2));display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;gap:13px;align-items:center}.mark{height:43px;width:43px;background:var(--yellow);color:var(--navy);border-radius:13px;display:grid;place-items:center;font-size:24px;font-weight:900}.brand strong{display:block;font-size:18px}.brand small{color:#c8d3e7}.tag{font-size:12px;border:1px solid #5b6d90;padding:7px 10px;border-radius:99px;color:#dce5f5}
+.wrap{max-width:1140px;margin:0 auto;padding:32px 22px 60px}.intro{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:26px}.intro h1{font-size:clamp(24px,3vw,34px);margin:0 0 8px}.intro p{color:var(--muted);margin:0}
+.pill{background:#fff;border:1px solid var(--border);padding:8px 12px;border-radius:99px;color:#53627a;font-size:12px}.grid{display:grid;grid-template-columns:360px 1fr;gap:22px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 6px 24px rgba(16,30,60,.04);padding:24px}.card h2{font-size:18px;margin:0 0 9px}.card p{color:var(--muted);font-size:14px;line-height:1.6}
+.label{display:block;font-size:13px;font-weight:700;margin:18px 0 7px}input{width:100%;border:1px solid #cfd8e5;border-radius:10px;padding:12px 13px;background:#fff;outline-color:var(--yellow)}
+.btn{border:0;border-radius:10px;background:var(--yellow);color:var(--navy);font-weight:800;padding:13px 18px;width:100%;margin-top:18px}.btn.secondary{background:#e9eef7;color:var(--navy)}.btn:disabled{opacity:.6;cursor:wait}
+.hint{background:#fff8df;border:1px solid #f3df9a;border-radius:10px;padding:12px;margin-top:17px;font-size:12px;line-height:1.6;color:#725a1d}
+.message{display:none;padding:12px;border-radius:9px;margin-top:14px;font-size:13px;line-height:1.5}.message.error{display:block;color:#7b2424;background:#fff0f0}.message.ok{display:block;color:#145b3b;background:#eaf8f0}
+.preview{background:#f8faff;border:1px dashed #cad6e8;border-radius:14px;padding:18px;margin-top:18px}.preview-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.preview-head strong{font-size:15px}.preview-head span{font-size:11px;color:#6a7890}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}.stat{background:white;border:1px solid var(--border);padding:15px;border-radius:12px}.stat small{color:#728097;display:block;font-size:11px}.stat b{display:block;font-size:21px;margin-top:8px;color:var(--navy)}
+.rows{margin-top:15px;border:1px solid var(--border);background:#fff;border-radius:12px;overflow:hidden}.r{display:grid;grid-template-columns:1fr 1fr 90px;gap:8px;align-items:center;padding:13px;border-top:1px solid var(--border);font-size:13px}.r:first-child{border-top:0;background:#f3f6fb;color:#64738c;font-weight:700;font-size:11px}.status{display:inline-block;border-radius:99px;background:#eef2f8;padding:5px 8px;color:#52617c;font-size:11px;text-align:center}
+.hidden{display:none!important}.panel{margin-top:22px}.paneltop{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}.paneltop h2{margin:0}.role{display:inline-block;background:#eaf0fb;color:#1b3766;padding:6px 10px;border-radius:99px;font-size:12px;font-weight:700}.foot{text-align:center;color:#8290a5;font-size:12px;margin-top:28px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr}.top{padding:16px 20px}.tag{font-size:10px}.r{grid-template-columns:1fr 1fr 70px}.wrap{padding-top:24px}}
 </style>
 </head>
 <body>
-<header class="top"><div class="brand"><div class="mark">X</div><div><strong>Xerox Universitária</strong><small>Gestão financeira e fechamentos</small></div></div><span class="tag">PRÉVIA • AMBIENTE DE TESTES</span></header>
-<main class="wrap"><div class="intro"><div><h1>Controle financeiro da loja</h1><p>Organização dos fechamentos, metas e conferências em um só lugar.</p></div><span class="pill">Versão visual demonstrativa</span></div>
-<div class="grid"><section class="card"><h2>Acesso ao sistema</h2><p>Este é o layout inicial do acesso individual de funcionários e da Administração.</p><form id="login"><label class="label" for="email">E-mail</label><input id="email" type="email" autocomplete="username" placeholder="seuemail@exemplo.com" required><label class="label" for="password">Senha</label><input id="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required><button class="btn" type="submit">Entrar no sistema</button></form><div id="message" class="toast" role="status">A autenticação ainda não está conectada. Esta página é apenas uma prévia visual; nenhuma senha foi enviada ou armazenada.</div><div class="hint"><b>Ambiente demonstrativo.</b> Não utilize sua senha real nesta tela. O login será ativado após a integração e os testes de segurança do Supabase.</div></section>
-<section class="card"><div class="preview-head"><div><h2>Prévia do painel administrativo</h2><p style="margin:0">Exemplo visual, sem dados financeiros reais.</p></div><span>DEMONSTRAÇÃO</span></div><div class="preview"><div class="preview-head"><strong>Resumo do dia</strong><span>Valores ilustrativos</span></div><div class="stats"><div class="stat"><small>Vendas do dia</small><b>R$ 0,00</b></div><div class="stat"><small>Recebimentos</small><b>R$ 0,00</b></div><div class="stat"><small>Diferença</small><b>R$ 0,00</b></div></div><div class="rows"><div class="r"><span>Funcionário</span><span>Fechamento</span><span>Status</span></div><div class="r"><strong>Vitória</strong><span>Sem dados</span><span class="status">Pendente</span></div><div class="r"><strong>Matheus</strong><span>Sem dados</span><span class="status">Pendente</span></div></div></div><div class="note">Próximas funcionalidades: lançamentos por forma de pagamento, conferência de caixa, sangrias, metas individuais, aprovação e relatórios.</div></section></div><p class="foot">© 2026 Xerox Universitária • Interface em desenvolvimento • Não utilizar para registros financeiros reais</p></main>
-<script>document.getElementById('login').addEventListener('submit',function(e){e.preventDefault();document.getElementById('password').value='';document.getElementById('message').style.display='block';});</script>
-</body></html>
+<header class="top"><div class="brand"><div class="mark">X</div><div><strong>Xerox Universitária</strong><small>Gestão financeira e fechamentos</small></div></div><span class="tag">AMBIENTE DE TESTES</span></header>
+<main class="wrap">
+  <div class="intro"><div><h1>Controle financeiro da loja</h1><p>Organização dos fechamentos, metas e conferências em um só lugar.</p></div><span class="pill" id="version">Login conectado ao Supabase</span></div>
+  <section id="loginArea" class="grid">
+    <section class="card"><h2>Acesso ao sistema</h2><p>Entre com seu e-mail e senha cadastrados no Supabase Auth.</p>
+      <form id="loginForm">
+        <label class="label" for="email">E-mail</label><input id="email" type="email" autocomplete="username" placeholder="seuemail@exemplo.com" required>
+        <label class="label" for="password">Senha</label><input id="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required>
+        <button class="btn" id="loginButton" type="submit">Entrar no sistema</button>
+      </form>
+      <div id="loginMessage" class="message" role="status"></div>
+      <div class="hint"><b>Ambiente de testes.</b> Esta versão autentica o usuário e consulta seu cadastro de funcionário. Ainda não realiza lançamentos, aprovações ou alterações financeiras.</div>
+    </section>
+    <section class="card"><div class="preview-head"><div><h2>Estrutura do sistema</h2><p style="margin:0">As áreas serão liberadas conforme o perfil cadastrado.</p></div><span>TESTES</span></div>
+      <div class="preview"><div class="preview-head"><strong>Perfis previstos</strong><span>Controle por usuário</span></div>
+        <div class="rows"><div class="r"><span>Perfil</span><span>Área prevista</span><span>Status</span></div>
+          <div class="r"><strong>Administrador</strong><span>Gestão completa</span><span class="status">Em teste</span></div>
+          <div class="r"><strong>Matheus</strong><span>Fechamento individual</span><span class="status">Em teste</span></div>
+          <div class="r"><strong>Victória</strong><span>Fechamento individual</span><span class="status">Em teste</span></div>
+        </div>
+      </div>
+      <p class="hint">O acesso só será reconhecido se existir um registro ativo em <b>public.funcionarios</b> com <b>id</b> igual ao ID do usuário autenticado.</p>
+    </section>
+  </section>
+
+  <section id="dashboard" class="card panel hidden">
+    <div class="paneltop"><div><h2 id="welcome">Bem-vindo</h2><p id="profileInfo" style="margin:6px 0 0">Perfil identificado.</p></div><div><span class="role" id="roleBadge"></span> <button class="btn secondary" id="logoutButton" style="width:auto;margin:0 0 0 8px">Sair</button></div></div>
+    <div class="preview"><strong>Área de acesso liberada</strong><p id="roleDescription">Seu perfil foi identificado.</p><p><b>Próximo passo:</b> validar as permissões do banco e construir as telas operacionais. Nenhum dado financeiro foi consultado ou alterado nesta etapa.</p></div>
+    <div id="profileError" class="message error"></div>
+  </section>
+  <p class="foot">© 2026 Xerox Universitária • Integração inicial • Não utilizar ainda para registros financeiros reais</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = 'https://czdjpcwtncvdxntlihyh.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_JbS_ik4Dj18USIAfWHTcJg_Lj-2AqAM';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const loginArea = document.getElementById('loginArea');
+const dashboard = document.getElementById('dashboard');
+const loginMessage = document.getElementById('loginMessage');
+const loginButton = document.getElementById('loginButton');
+
+function showMessage(el, text, type='error') {
+  el.textContent = text;
+  el.className = 'message ' + type;
+}
+function friendlyError(error) {
+  const msg = (error && error.message) ? error.message : 'Não foi possível concluir a operação.';
+  if (/invalid login credentials/i.test(msg)) return 'E-mail ou senha incorretos. Confira os dados e tente novamente.';
+  if (/email not confirmed/i.test(msg)) return 'Este e-mail ainda não foi confirmado no Supabase Auth.';
+  return msg;
+}
+async function showUser(user) {
+  loginArea.classList.add('hidden');
+  dashboard.classList.remove('hidden');
+  document.getElementById('welcome').textContent = 'Verificando seu acesso...';
+  document.getElementById('roleBadge').textContent = 'Validando perfil';
+  const { data, error } = await supabaseClient
+    .from('funcionarios')
+    .select('id, nome, perfil, ativo')
+    .eq('id', user.id)
+    .maybeSingle();
+
+  if (error) {
+    document.getElementById('welcome').textContent = 'Login realizado; perfil não validado';
+    document.getElementById('profileInfo').textContent = user.email || '';
+    showMessage(document.getElementById('profileError'),
+      'A autenticação funcionou, mas não foi possível consultar public.funcionarios. Verifique as permissões SELECT/RLS e os nomes das colunas. Detalhe: ' + error.message);
+    return;
+  }
+  if (!data || data.ativo !== true) {
+    await supabaseClient.auth.signOut();
+    dashboard.classList.add('hidden');
+    loginArea.classList.remove('hidden');
+    showMessage(loginMessage, 'Usuário autenticado, mas sem cadastro ativo correspondente em public.funcionarios. O acesso foi encerrado por segurança.');
+    return;
+  }
+  const nome = data.nome || user.email || 'Usuário';
+  const perfil = String(data.perfil || 'sem perfil').toLowerCase();
+  document.getElementById('welcome').textContent = 'Olá, ' + nome + '!';
+  document.getElementById('profileInfo').textContent = 'E-mail: ' + (user.email || 'não informado');
+  document.getElementById('roleBadge').textContent = perfil;
+  document.getElementById('roleDescription').textContent =
+    perfil === 'administrador'
+      ? 'Perfil administrativo identificado. O painel completo será habilitado após a validação das políticas e dos fluxos financeiros.'
+      : 'Perfil de funcionário identificado. A área individual será habilitada após a validação das permissões.';
+}
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  loginButton.disabled = true;
+  loginButton.textContent = 'Entrando...';
+  loginMessage.className = 'message';
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  document.getElementById('password').value = '';
+  loginButton.disabled = false;
+  loginButton.textContent = 'Entrar no sistema';
+  if (error) {
+    showMessage(loginMessage, friendlyError(error));
+    return;
+  }
+  await showUser(data.user);
+});
+document.getElementById('logoutButton').addEventListener('click', async () => {
+  await supabaseClient.auth.signOut();
+  dashboard.classList.add('hidden');
+  loginArea.classList.remove('hidden');
+  loginMessage.className = 'message';
+});
+(async () => {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (session?.user) await showUser(session.user);
+})();
+</script>
+</body>
+</html>
